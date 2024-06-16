@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const Navbar: React.FC = () => {
   return (
     <Box sx={{ 
+      component: 'nav',
       flexGrow: 1, 
       }}
       >

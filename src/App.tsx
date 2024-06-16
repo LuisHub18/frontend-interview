@@ -1,33 +1,28 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css'
-import Navbar from './components/Navbar.tsx';
-import Inicio from './pages/Inicio.tsx';
-import Articulo from './pages/Articulo.tsx';
-import Modelo from './pages/Modelo.tsx';
-import Marca from './pages/Marca.tsx';
+// App.js
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Inicio from './pages/Inicio';
+import Articulo from './pages/Articulo';
+import Modelo from './pages/Modelo';
+import Marca from './pages/Marca';
+import './App.css';
 
 function App() {
-
   return (
-    <>
-      <header className=''>
-        <Router>
-          <nav>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Inicio/>} />
-              <Route path="/articulo" element={<Articulo/>} />
-              <Route path="/modelo" element={<Modelo/>} />
-              <Route path="/marca" element={<Marca/>} />
-            </Routes>
-          </nav>
-        </Router>
+    <Router>
+      <header>
+        <Navbar />
       </header>
       <main>
-        
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/articulo/*" element={<Articulo />} />
+          <Route path="/modelo/*" element={<Modelo />} />
+          <Route path="/marca/*" element={<Marca />} />
+        </Routes>
       </main>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;

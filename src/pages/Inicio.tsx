@@ -17,7 +17,7 @@ const Inicio = () => {
         >
             <Box sx={{ padding: '20px' }}>
                 <Typography variant="h3" component="h1" className="text-3xl text-white">
-                    Cru!
+                    CRUD Tienda | Ferreteria 
                 </Typography>
                 <Typography variant="h5" component="h2" className="mt-4 text-white">
                     Bienvenido a nuestra plataforma
@@ -34,10 +34,10 @@ const Inicio = () => {
                             }}
                         >
                             <Typography variant="h6" component="h3" className="text-white">
-                                Característica 1
+                                Articulos
                             </Typography>
                             <Typography variant="body1" className="text-white">
-                                Descripción de la característica 1.
+                                En esta sección podrás ver todos los artículos disponibles en la tienda, así como agregar, editar y eliminar artículos.
                             </Typography>
                         </Paper>
                     </Grid>
@@ -50,10 +50,10 @@ const Inicio = () => {
                             }}
                         >
                             <Typography variant="h6" component="h3" className="text-white">
-                                Característica 2
+                                Modelos
                             </Typography>
                             <Typography variant="body1" className="text-white">
-                                Descripción de la característica 2.
+                                En esta sección podrás ver todos los modelos disponibles en la tienda, así como agregar, editar y eliminar modelos.
                             </Typography>
                         </Paper>
                     </Grid>
@@ -66,10 +66,10 @@ const Inicio = () => {
                             }}
                         >
                             <Typography variant="h6" component="h3" className="text-white">
-                                Característica 3
+                                Marcas
                             </Typography>
                             <Typography variant="body1" className="text-white">
-                                Descripción de la característica 3.
+                                En esta sección podrás ver todas las marcas disponibles en la tienda, así como agregar, editar y eliminar marcas.
                             </Typography>
                         </Paper>
                     </Grid>
@@ -77,7 +77,7 @@ const Inicio = () => {
             </Container>
             <Box sx={{ padding: '20px', marginTop: 'auto' }}>
                 <Typography variant="body2" className="text-white">
-                    &copy; 2024 Cru. Todos los derechos reservados.
+                    &copy; 2024 Edu. Todos los derechos reservados.
                 </Typography>
             </Box>
         </Box>
