@@ -6,7 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import apiclient from "../../utils/apiclient";
-import { ModeloRequest, Modelo } from "../../types.d";
+import { ModeloRequest, Marca, Modelo } from "../../types.d";
 import { MenuItem } from "@mui/material";
 
 interface EditModelo {
@@ -17,7 +17,7 @@ interface EditModelo {
 }
 
 const EditModelo: React.FC<EditModelo> = ({ isOpen, closeModal, onComplete, modelo }) => {
-    const [marcas, setMarcas] = useState<Modelo[]>([]);
+    const [marcas, setMarcas] = useState<Marca[]>([]);
     const [selectedMarca, setSelectedMarca] = useState<number | string>('');
 
     useEffect(() => {
@@ -72,7 +72,7 @@ const EditModelo: React.FC<EditModelo> = ({ isOpen, closeModal, onComplete, mode
             }}
             maxWidth="lg"
         >
-            <DialogTitle className="text-center">EDITAR MODELO</DialogTitle>
+            <DialogTitle className="text-center text-blue-scale-500">EDITAR MODELO</DialogTitle>
             <DialogContent>
                 <TextField
                     autoFocus
@@ -107,7 +107,7 @@ const EditModelo: React.FC<EditModelo> = ({ isOpen, closeModal, onComplete, mode
             </DialogContent>
             <DialogActions>
                 <Button onClick={closeModal}>Cancelar</Button>
-                <Button type="submit">Guardar</Button>
+                <Button type="submit" color="success">Guardar</Button>
             </DialogActions>
         </Dialog>
     );

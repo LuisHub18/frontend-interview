@@ -1,7 +1,8 @@
 import { TableRow, TableCell } from '@mui/material';
 import {Articulo, ModalType} from '../../types.d'
-import DeleteArticuloDialog from './DeleteArticuloDialog';
 import ArticuloFormDialog from './ArticuloFormDialog';
+import DeleteDialog from '../DeleteDialog';
+import apiclient from '../../utils/apiclient';
 
 interface ArticuloListItemProps{
     articulo: Articulo,
@@ -10,6 +11,14 @@ interface ArticuloListItemProps{
 }
 
  const ArticuloListItem: React.FC<ArticuloListItemProps> = ({articulo, numeroArticulos, onCompleted}) =>{
+
+    const handleDelete = (id: number) => {
+        apiclient.articulos.delete(id).then(() => {
+            onCompleted();
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
     
     return (
         <TableRow 
@@ -25,13 +34,14 @@ interface ArticuloListItemProps{
             <TableCell>{articulo.precio}</TableCell>
             <TableCell>{articulo.cantidad}</TableCell>
             <TableCell>{articulo.fechaCreacion}</TableCell>
-            <TableCell>{articulo.modelo.id}</TableCell>
+            <TableCell>{articulo.modelo.nombre}</TableCell>
             <TableCell>    
                 <ArticuloFormDialog modalType={ModalType.EDIT_ARTICULO} articulo={articulo} onCompleted={onCompleted}/>
-                <DeleteArticuloDialog 
+                {/* <DeleteArticuloDialog 
                     articulo={articulo} 
                     onCompleted={onCompleted}
-                />
+                /> */}
+                <DeleteDialog handleDelete={handleDelete} entity={articulo} entityName={'articulo'} />
             </TableCell>
         </TableRow>
     );

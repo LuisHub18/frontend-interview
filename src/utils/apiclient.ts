@@ -1,5 +1,5 @@
-import axios from "axios";
-import { ArticuloRequest, MarcaRequest, ModeloRequest } from '../types';
+import axios, { AxiosResponse } from "axios";
+import { ArticuloRequest, Articulo, MarcaRequest, Marca, ModeloRequest, Modelo } from '../types';
 
 const api = axios.create({
   baseURL: "http://localhost:8080",
@@ -8,50 +8,52 @@ const api = axios.create({
   },
 });
 
-export default {
-    articulos : {
-        async getAll(){
+const apiclient = {
+    articulos: {
+        getAll(): Promise<AxiosResponse<Articulo[]>> {
             return api.get('/articulo');
         },
-        async create(articulo: ArticuloRequest){
+        create(articulo: ArticuloRequest): Promise<AxiosResponse<Articulo>> {
             return api.post('/articulo', articulo);
         },
-        async update(id:number, articulo:ArticuloRequest){
+        update(id: number, articulo: ArticuloRequest): Promise<AxiosResponse<Articulo>> {
             return api.put(`/articulo/${id}`, articulo);
         },
-        async delete(id: number){
+        delete(id: number): Promise<AxiosResponse<void>> {
             return api.delete(`/articulo/${id}`);
         }
     },
-    marcas:{
-        async getAll(){
+    marcas: {
+        getAll(): Promise<AxiosResponse<Marca[]>> {
             return api.get('/marca');
         },
-        async create(marca: MarcaRequest){
+        create(marca: MarcaRequest): Promise<AxiosResponse<Marca>> {
             return api.post('/marca', marca);
         },
-        async update(id:number, marca: MarcaRequest){
+        update(id: number, marca: MarcaRequest): Promise<AxiosResponse<Marca>> {
             return api.put(`/marca/${id}`, marca);
         },
-        async delete(id: number){
+        delete(id: number): Promise<AxiosResponse<void>> {
             return api.delete(`/marca/${id}`);
         }
     },
-    modelos:{
-        async getAll(){
+    modelos: {
+        getAll(): Promise<AxiosResponse<Modelo[]>> {
             return api.get('/modelo');
         },
-        async getByMarca(marcaId: number){
+        getByMarca(marcaId: number): Promise<AxiosResponse<Modelo[]>> {
             return api.get(`/modelo/${marcaId}`);
         },
-        async create(modelo: ModeloRequest){
+        create(modelo: ModeloRequest): Promise<AxiosResponse<Modelo>> {
             return api.post('/modelo', modelo);
         },
-        async update(id:number, modelo:ModeloRequest){
+        update(id: number, modelo: ModeloRequest): Promise<AxiosResponse<Modelo>> {
             return api.put(`/modelo/${id}`, modelo);
         },
-        async delete(id: number){
+        delete(id: number): Promise<AxiosResponse<void>> {
             return api.delete(`/modelo/${id}`);
         }
     },
-}
+};
+
+export default apiclient;

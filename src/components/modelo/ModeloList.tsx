@@ -37,13 +37,13 @@ const ModeloList = () => {
                 <Table>
                     <TableHead
                         sx={{
-                            backgroundColor: '#f5f5f5'
+                            backgroundColor: '#5592c4'
                         }}
                     >
                         <TableRow>
-                            <TableCell>Id</TableCell>
-                            <TableCell>Nombre</TableCell>
-                            <TableCell>Marca</TableCell>
+                            <TableCell sx={{color: 'white', fontWeight: 'bold'} }>Id</TableCell>
+                            <TableCell sx={{color: 'white', fontWeight: 'bold'} }>Nombre</TableCell>
+                            <TableCell sx={{color: 'white', fontWeight: 'bold'} }>Marca</TableCell>
                             <TableCell></TableCell>
                         </TableRow>
                     </TableHead>

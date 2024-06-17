@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import EditIcon from '@mui/icons-material/Edit';
 import { Marca, ModalType } from '../../types.d';
 import { IconButton } from '@mui/material';
-import ExitoDialog from '../ExitoDialog.tsx';
+import ExitoDialog from '../SuccessDialog.tsx';
 import AddMarca from './AddMarca.tsx';
 import EditMarca from './EditMarca.tsx';
 
@@ -37,7 +37,7 @@ const MarcaFormDialog: React.FC<MarcaFormDialogProps> = ({modalType, onCompleted
   return (
       modalType === ModalType.ADD_MARCA ? 
       <div className='text-center'>
-          <Button variant='outlined' onClick={handleClickOpen}>Añadir marca</Button>
+          <Button variant='outlined' onClick={handleClickOpen}  sx={{color: '#225f91'}}>Añadir marca</Button>
           <AddMarca isOpen={open} closeModal={handleClose} onComplete={
               () => {
                   handleClose();
@@ -51,7 +51,10 @@ const MarcaFormDialog: React.FC<MarcaFormDialogProps> = ({modalType, onCompleted
       marca 
       &&
       <div>
-          <IconButton onClick={handleClickOpen} color="success">
+          <IconButton 
+            onClick={handleClickOpen} 
+            color='success'
+          >
             <EditIcon />
           </IconButton>
           <EditMarca isOpen={open} closeModal={handleClose} onComplete={

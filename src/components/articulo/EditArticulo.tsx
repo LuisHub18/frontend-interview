@@ -8,7 +8,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import apiclient from "../../utils/apiclient";
 import { ArticuloRequest, Marca, Modelo } from "../../types";
-import { MenuItem } from "@mui/material";
+import { InputAdornment, MenuItem } from "@mui/material";
 
 interface EditArticuloProps {
     isOpen: boolean;
@@ -109,7 +109,7 @@ const EditArticulo: React.FC<EditArticuloProps> = ({ isOpen, closeModal, onCompl
             }}
             maxWidth="lg"
         >
-            <DialogTitle className="text-center">EDITAR ARTICULO {articulo.id}</DialogTitle>
+            <DialogTitle className="text-center text-blue-scale-500">EDITAR ARTICULO {articulo.id}</DialogTitle>
             <DialogContent>
                 <TextField
                     autoFocus
@@ -139,6 +139,10 @@ const EditArticulo: React.FC<EditArticuloProps> = ({ isOpen, closeModal, onCompl
                     margin="dense"
                     id="precio"
                     name="precio"
+                    InputProps={{
+                        startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                    }}
+                    inputProps={{ step: "0.01", min: "0" }}
                     defaultValue={articulo.precio}
                     label="Precio"
                     type="number"
@@ -152,6 +156,7 @@ const EditArticulo: React.FC<EditArticuloProps> = ({ isOpen, closeModal, onCompl
                     defaultValue={articulo.cantidad}
                     name="cantidad"
                     label="Cantidad"
+                    inputProps={{ min: "0" }}
                     type="number"
                     fullWidth
                     variant="standard"
@@ -200,7 +205,7 @@ const EditArticulo: React.FC<EditArticuloProps> = ({ isOpen, closeModal, onCompl
             </DialogContent>
             <DialogActions>
                 <Button onClick={closeModal}>Cancelar</Button>
-                <Button disabled={!activo} type="submit">Guardar</Button>
+                <Button disabled={!activo} type="submit" color="success">Guardar</Button>
             </DialogActions>
         </Dialog>
     );

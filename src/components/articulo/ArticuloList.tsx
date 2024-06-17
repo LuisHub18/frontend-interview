@@ -38,17 +38,17 @@ const ArticuloList = () => {
                 <Table>
                     <TableHead
                         sx={{
-                            backgroundColor: '#f5f5f5'
+                            backgroundColor: '#5592c4'
                         }}
                     >
                         <TableRow>
-                            <TableCell>Id</TableCell>
-                            <TableCell>Nombre</TableCell>
-                            <TableCell>Descripción</TableCell>
-                            <TableCell>Precio</TableCell>
-                            <TableCell>Cantidad</TableCell>
-                            <TableCell>Fecha Creación</TableCell>
-                            <TableCell>Modelo</TableCell>
+                            <TableCell sx={{color: 'white', fontWeight: 'bold'} }>Id</TableCell>
+                            <TableCell sx={{color: 'white', fontWeight: 'bold'} }>Nombre</TableCell>
+                            <TableCell sx={{color: 'white', fontWeight: 'bold'} }>Descripción</TableCell>
+                            <TableCell sx={{color: 'white', fontWeight: 'bold'} }>Precio</TableCell>
+                            <TableCell sx={{color: 'white', fontWeight: 'bold'} }>Cantidad</TableCell>
+                            <TableCell sx={{color: 'white', fontWeight: 'bold'} }>Fecha Creación</TableCell>
+                            <TableCell sx={{color: 'white', fontWeight: 'bold'} }>Modelo</TableCell>
                             <TableCell></TableCell>
                         </TableRow>
                     </TableHead>

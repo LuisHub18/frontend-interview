@@ -7,7 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import apiclient from "../../utils/apiclient";
 import { ArticuloRequest, Marca, Modelo } from "../../types";
-import { MenuItem } from "@mui/material";
+import { InputAdornment, MenuItem } from "@mui/material";
 
 interface AddArticuloProps {
     isOpen: boolean;
@@ -98,7 +98,7 @@ const AddArticulo: React.FC<AddArticuloProps> = ({ isOpen, closeModal, onComplet
             }}
             maxWidth="lg"
         >
-            <DialogTitle className="text-center">AÑADIR ARTICULO</DialogTitle>
+            <DialogTitle className="text-center text-blue-scale-500">AÑADIR ARTICULO</DialogTitle>
             <DialogContent>
                 <TextField
                     autoFocus
@@ -125,6 +125,9 @@ const AddArticulo: React.FC<AddArticuloProps> = ({ isOpen, closeModal, onComplet
                     required
                     margin="dense"
                     id="precio"
+                    InputProps={{
+                        startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                    }}
                     name="precio"
                     label="Precio"
                     inputProps={{ step: "0.01", min: "0" }}
@@ -188,7 +191,7 @@ const AddArticulo: React.FC<AddArticuloProps> = ({ isOpen, closeModal, onComplet
             </DialogContent>
             <DialogActions>
                 <Button onClick={closeModal}>Cancelar</Button>
-                <Button disabled={!selectedMarca || !activoModelo} type="submit">Guardar</Button>
+                <Button disabled={!selectedMarca || !activoModelo} type="submit" color="success">Guardar</Button>
             </DialogActions>
         </Dialog>
     );

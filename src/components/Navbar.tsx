@@ -9,11 +9,16 @@ const Navbar: React.FC = () => {
       flexGrow: 1, 
       }}
       >
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: '#081824' }}> {/* Aquí puedes definir un color personalizado */}
         <Toolbar className='flex justify-between items-center'>
-          <h1 className='text-xl font-bold'>CRUD Tienda</h1>
+          <Button 
+            color="inherit" 
+            component={Link} 
+            sx={{ fontSize: '1.5rem', fontWeight: 'bold' }}
+            to='/'>
+            CRUD
+          </Button>
           <div>
-            <Button color="inherit" component={Link} to='/'>Inicio</Button>
             <Button color="inherit" component={Link} to='/articulo'>Articulos</Button>
             <Button color="inherit" component={Link} to='/modelo'>Modelos</Button>
             <Button color="inherit" component={Link} to='/marca'>Marcas</Button>

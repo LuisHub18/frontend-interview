@@ -70,7 +70,7 @@ const AddModelo: React.FC<AddModeloProps> = ({ isOpen, closeModal, onComplete })
             }}
             maxWidth="lg"
         >
-            <DialogTitle className="text-center">AÑADIR MODELO</DialogTitle>
+            <DialogTitle className="text-center text-blue-scale-500">AÑADIR MODELO</DialogTitle>
             <DialogContent>
                 <TextField
                     autoFocus
@@ -104,7 +104,7 @@ const AddModelo: React.FC<AddModeloProps> = ({ isOpen, closeModal, onComplete })
             </DialogContent>
             <DialogActions>
                 <Button onClick={closeModal}>Cancelar</Button>
-                <Button type="submit">Guardar</Button>
+                <Button type="submit" color="success">Guardar</Button>
             </DialogActions>
         </Dialog>
     );

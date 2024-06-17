@@ -50,7 +50,7 @@ const EditMarca: React.FC<EditModelo> = ({ isOpen, closeModal, onComplete, marca
             }}
             maxWidth="lg"
         >
-            <DialogTitle className="text-center">EDITAR MARCA</DialogTitle>
+            <DialogTitle className="text-center text-blue-scale-500">EDITAR MARCA</DialogTitle>
             <DialogContent>
                 <TextField
                     autoFocus
@@ -67,7 +67,7 @@ const EditMarca: React.FC<EditModelo> = ({ isOpen, closeModal, onComplete, marca
             </DialogContent>
             <DialogActions>
                 <Button onClick={closeModal}>Cancelar</Button>
-                <Button type="submit">Guardar</Button>
+                <Button type="submit" color="success">Guardar</Button>
             </DialogActions>
         </Dialog>
     );

@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import EditIcon from '@mui/icons-material/Edit';
 import { Modelo, ModalType } from '../../types.d';
 import { IconButton } from '@mui/material';
-import ExitoDialog from '../ExitoDialog.tsx';
+import ExitoDialog from '../SuccessDialog.tsx';
 import AddModelo from './AddModelo.tsx';
 import EditModelo from './EditModelo.tsx';
 
@@ -37,7 +37,7 @@ const ModeloFormDialog: React.FC<ModeloFormDialogProps> = ({modalType, onComplet
   return (
       modalType === ModalType.ADD_MODELO ? 
       <div className='text-center'>
-          <Button variant='outlined' onClick={handleClickOpen}>Añadir modelo</Button>
+          <Button variant='outlined' onClick={handleClickOpen}  sx={{color: '#225f91'}}>Añadir modelo</Button>
           <AddModelo isOpen={open} closeModal={handleClose} onComplete={
                 () => {
                     handleClose();
@@ -51,7 +51,10 @@ const ModeloFormDialog: React.FC<ModeloFormDialogProps> = ({modalType, onComplet
       modelo 
       &&
       <div>
-          <IconButton onClick={handleClickOpen} color="success">
+         <IconButton 
+            onClick={handleClickOpen} 
+            color='success'
+          >
             <EditIcon />
           </IconButton>
           <EditModelo isOpen={open} closeModal={handleClose} onComplete={

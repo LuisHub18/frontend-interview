@@ -48,7 +48,7 @@ const AddMarca: React.FC<AddMarcaProps> = ({ isOpen, closeModal, onComplete }) =
             }}
             maxWidth="lg"
         >
-            <DialogTitle className="text-center">AÑADIR MARCA</DialogTitle>
+            <DialogTitle className="text-center text-blue-scale-500">AÑADIR MARCA</DialogTitle>
             <DialogContent>
                 <TextField
                     autoFocus
@@ -64,7 +64,7 @@ const AddMarca: React.FC<AddMarcaProps> = ({ isOpen, closeModal, onComplete }) =
             </DialogContent>
             <DialogActions>
                 <Button onClick={closeModal}>Cancelar</Button>
-                <Button type="submit">Guardar</Button>
+                <Button type="submit" color="success">Guardar</Button>
             </DialogActions>
         </Dialog>
     );

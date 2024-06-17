@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 
 const Inicio = () => {
@@ -9,15 +8,15 @@ const Inicio = () => {
                 minHeight: '100vh',
                 display: 'flex',
                 flexDirection: 'column',
-                background: 'linear-gradient(to bottom, #eaf1f8, #2a77b5)',
+                background: 'linear-gradient(to bottom,#113048 ,#eaf1f8)',
                 color: 'white',
                 textAlign: 'center'
             }}
             className='bg-gradient-to-b from-blue-scale-50 to-blue-scale-500'
         >
             <Box sx={{ padding: '20px' }}>
-                <Typography variant="h3" component="h1" className="text-3xl text-white">
-                    CRUD Tienda | Ferreteria 
+                <Typography variant="h3" component="h1" className="text-3xl">
+                    Tienda | Ferreteria 
                 </Typography>
                 <Typography variant="h5" component="h2" className="mt-4 text-white">
                     Bienvenido a nuestra plataforma
@@ -76,7 +75,7 @@ const Inicio = () => {
                 </Grid>
             </Container>
             <Box sx={{ padding: '20px', marginTop: 'auto' }}>
-                <Typography variant="body2" className="text-white">
+                <Typography variant="body2" className="text-blue-scale-900">
                     &copy; 2024 Edu. Todos los derechos reservados.
                 </Typography>
             </Box>

@@ -6,7 +6,7 @@ import { Articulo, ModalType } from '../../types.d';
 import { IconButton } from '@mui/material';
 import AddArticulo from './AddArticulo.tsx';
 import EditArticulo from './EditArticulo.tsx';
-import ExitoDialog from '../ExitoDialog.tsx';
+import ExitoDialog from '../SuccessDialog.tsx';
 
 interface ArticuloFormDialogProps {
     modalType: ModalType;
@@ -38,7 +38,9 @@ const ArticuloFormDialog: React.FC<ArticuloFormDialogProps> = ({modalType, onCom
   return (
       modalType === ModalType.ADD_ARTICULO ? 
       <div className='text-center'>
-          <Button variant='outlined' onClick={handleClickOpen}>Añadir articulo</Button>
+          <Button variant='outlined' onClick={handleClickOpen}
+          sx={{color: '#225f91'}}
+          >Añadir articulo</Button>
           <AddArticulo isOpen={open} closeModal={handleClose} onComplete={
               () => {
                   handleClose();
@@ -52,7 +54,10 @@ const ArticuloFormDialog: React.FC<ArticuloFormDialogProps> = ({modalType, onCom
       articulo 
       &&
       <div>
-          <IconButton onClick={handleClickOpen} color="success">
+          <IconButton 
+            onClick={handleClickOpen} 
+            color='success'
+          >
             <EditIcon />
           </IconButton>
           <EditArticulo 
